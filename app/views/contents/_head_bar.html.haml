@@ -1,0 +1,20 @@
+.Header
+  .LeftHeader
+    .LeftHeader__Left
+      otyanoma
+    .LeftHeader__Right
+      = link_to "#" , class: "LeftHeader__Right__Btn" do
+        新規登録
+      = link_to "#" , class: "LeftHeader__Right__Btn" do
+        ログイン
+      
+  .RightHeader
+    .RightHeader__SearchBox
+      .RightHeader__SearchBox__Form
+        %form{class: "Form"}
+          %input{type: "text", placeholder: "キーワードから探す", class: "InputText"}
+          %button{type: "submit", class: "SubmitBtn"}
+            .RightHeader__SearchBox__Form__Icon
+              = icon("fas", "search")
+            
+    

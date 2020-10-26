@@ -1,3 +1,73 @@
 * {
   box-sizing: border-box;
 }
+
+.Header{
+  height: 80px;
+  background-color: lightcoral;
+  padding: 10px 0 ;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid pink;
+  .LeftHeader{
+    width: 30%;
+    display: flex;
+    padding-top: 30px;
+    &__Left{
+      padding: 0 30px 0 20px;
+    }
+    &__Right{
+    
+      &__Btn{
+        color: black;
+        border: 1px solid pink;
+        padding: 5px;
+        margin-left: 5px;
+        font-size: 15px;
+      }
+    }
+  }
+  .RightHeader{
+    width: 70%;
+    &__SearchBox{
+      width: 100%;
+      &__Form{
+        margin-top: 20px;
+        width: 100%;
+        .Form{
+          width: 100%;
+          display: flex;
+          .InputText{
+            width: calc(100% - 500px);
+            height: 30px;
+            padding-left: 10px;
+          }
+          .SubmitBtn{
+            width: 40px;
+            cursor: pointer;
+            
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+.Main{
+  height: calc(100vh - 50px);
+
+  .FirstView{
+    height: 60vh;
+  }
+  .Middle{
+    height: calc(100vh - 50px - 60vh);
+    background-color: #ffffff;
+    
+
+
+  }
+
+}
+
