@@ -20,11 +20,13 @@
     &__Right{
     
       &__Btn{
-        color: black;
-        border: 3px solid pink;
+        color: white;
+        background-color: rgb(248, 157, 172);
+        border-radius: 4px;
         padding: 5px;
-        margin-left: 5px;
+        margin-left: 10px;
         font-size: 15px;
+        font-weight: bold;
       }
     }
   }
