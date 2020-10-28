@@ -1,0 +1,73 @@
+.ContentDetail
+  = render "head_bar"
+  
+  .TopMain
+    .FirstView
+      = image_tag 'back/kazoku.jpg', alt: '犬の家族', height: '300px', width: '500px'
+    .FirstViewBtn
+      = link_to("今すぐ相談する", "#", class: "FirstViewText")
+  
+  .Middle
+    .MiddleBar
+      .MiddleBar__Center
+        __ 相談、Q&A
+
+    .ContentsShowBox
+      .ContentsMessageBox
+        .UserBox
+          .UserBox__Name
+            = link_to "#" , class: "Name" do
+              スモモ
+        .TextBoxShow
+          %p.BodyContent
+            私の父は兄と二人暮らしで兄は日中は仕事で夕方まで居なく
+            日中は独居になります。
+            私は遠くの他県に住んでおり
+            コロナのこともあり介護にかえることもできません。
+            父の認知症は進み
+            最近では、台所で失禁をしてしまったそうです。
+            本人に兄が聞くの覚えがない
+            そんなことをした記憶がないと怒ってしまいます。
+            そして、兄も父に強く怒ってしまうようです。
+            また、日中はひとりのため、タクシーで買い物は行き、浪費してしまうそうです。
+            多少のお金を持たせないと怒ってしまうそうで
+            困っているそうです。
+            お金の浪費や失禁
+            どうしたらいいか
+            悩んでいるそうです。 わたしは、遠くの他県に住んでいるため
+            コロナの事もあり帰る事も出来ず、気を揉んでおります。何か解決策はあるでしようか？
+        .DateBox
+          %p.NowDate
+            2020.10.23 10:23
+  
+  .CommentConteiner
+    .Middle
+      .MiddleBar
+        .MiddleBar__Center
+          __ 回答一覧
+    .CommentForm
+      = form_with class: 'CommnetSend' do |f|
+        = f.text_area '#', {class: 'CommnetSend__Form', placeholder: 'コメントを入力する', rows: '3'}
+        = f.submit 'SEND', {class: 'CommnetSend__SubmitBtn'}
+         
+    .CommentBox
+      .CommentBox__UserBox
+        .CommentBox__UserBox__UserName
+          = link_to "#" , class: "Name" do
+            モモ
+      .CommentTextBox
+        %p.CommentTextBox__Body
+          すごく辛いですね、、わかります
+          ただ頑張りましょう。向こうは何一つ覚えてないのだから
+    
+    .CommentBox
+      .CommentBox__UserBox
+        .CommentBox__UserBox__UserName
+          = link_to "#" , class: "Name" do
+            スイカさん
+      .CommentTextBox
+        %p.CommentTextBox__Body
+          心中お察しいたします
+                
+  
+  = render "footer"

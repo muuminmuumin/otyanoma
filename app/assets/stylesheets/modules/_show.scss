@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  color: #545454;
+}
+
+
+
+.ContentsShowBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .ContentsMessageBox{
+    padding: 15px;
+    margin: 10px 0;
+    background: #fff;
+    display: block;
+    width: 600px;
+    height: 100%;
+    .UserBox{
+      padding-bottom: 15px;
+      .Name{
+        &:hover{
+          text-decoration: underline;
+        }  
+      }
+    }
+    .TextBoxShow{
+      line-height: 1.72;
+      font-size: 15px;
+      width: 100%;
+    }
+    .DateBox{
+      padding-top: 10px;
+      padding-right: 20px;
+      color: gray;
+      p {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.CommentConteiner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8f8;
+
+  .CommentForm{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 600px;
+    .CommnetSend{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__Form{
+        width: 450px;
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 10px;
+      }
+      &__SubmitBtn{
+        cursor: pointer;
+        height: 70px;
+        width: 100px;
+        background-color: rgb(248, 157, 172);
+        border-radius: 4px;
+        border: none;
+        color:white;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .CommentBox{
+    padding: 15px;
+    margin: 10px 0;
+    display: block;
+    width: 600px;
+    height: 100%;
+    &__UserBox{
+      padding-bottom: 10px;
+      &__UserName{
+        color: black;
+        font-weight: bold;
+        &:hover{
+          text-decoration: underline;
+        }  
+      }
+    }
+    .CommentTextBox{
+      position: relative;
+      line-height: 1.72;
+      background-color: rgb(250, 214, 220);
+      padding: 10px;
+      border-radius: 10px;
+      &:before{
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: -15px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid rgb(250, 214, 220);
+        border-left: 15px solid transparent; 
+      }
+    }
+  }
+
+
+
+
+}
+
+.CommentTextBox::before{
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #fff3ad;
+  border-left: 15px solid transparent;
+}

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   
-  root "contents#index"
+  root "contents#show"
+
+  resources :contents, only: [:index, :show]
+
+
 end
