@@ -74,8 +74,8 @@
   }
 
   .CommentBox{
-    padding: 15px;
-    margin: 10px 0;
+    padding: 10px;
+    margin: 5px 0;
     display: block;
     width: 600px;
     height: 100%;
@@ -108,6 +108,19 @@
         border-left: 15px solid transparent; 
       }
     }
+
+    .DateRight{
+      padding-top: 5px;
+      padding-right: 5px;
+
+      p {
+        text-align: right;
+        color: gray;
+        font-size: 13px;
+      }
+    }
+
+
   }
 }
 
