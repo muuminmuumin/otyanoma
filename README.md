@@ -22,3 +22,34 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# otyanoma DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|name|string|null: false|
+### Association
+- has_many :contents
+- has_many :comments
+
+## contentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text||
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :comments
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|content_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :content
+- belongs_to :user
