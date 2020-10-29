@@ -1,0 +1,18 @@
+.ContentSendPage
+  = render "head_bar"
+  .ContentSend
+    .Middle
+      .MiddleBar
+        .MiddleBar__Center
+          __ 相談、介護に関しての質問をする
+    .ContentSendForm
+      .ContentSendName
+        お豆
+      .ContentSendBox
+        = form_with class: 'ContentCreateForm' do |f|
+          .ContentSendInputText
+            = f.text_area '#', {class: 'ContentSendInputText__InputText', placeholder: '介護に関してのご質問・ご相談はこちらからご入力ください', rows: '20'}
+          .ContentSendBtn
+            = f.submit '投稿する', {class: 'ContentSendBtn__SubmitBtn'}
+
+  = render "footer"
