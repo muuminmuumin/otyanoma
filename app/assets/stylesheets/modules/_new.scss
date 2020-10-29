@@ -1,0 +1,52 @@
+.ContentSendPage{
+  width: 100%;
+  height: 100vh;
+  background-color: #f8f8f8f8;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ContentSendForm{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .ContentCreateForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .ContentSendInputText{
+      &__InputText{
+        width: 600px;
+        padding: 10px; 
+      }
+    }
+      .ContentSendBtn{
+        margin-bottom: 20px;
+        &__SubmitBtn{
+          margin-top: 5px;
+          width: 600px;
+          height: 70px;
+          cursor: pointer;
+          background-color: rgb(202, 202, 202);
+          color: white;
+          border-radius: 10px;
+          border: none;
+        
+        }
+      }     
+  }
+}
+
+.ContentSendName{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 500px;
+  margin-bottom: 10px;
+  
+}
+
+.ContentSend{
+  padding: 20px;
+}
+
