@@ -1,4 +1,6 @@
 class ContentsController < ApplicationController
+  
+
   def index
   end
 
@@ -7,4 +9,7 @@ class ContentsController < ApplicationController
 
   def new
   end
+
+ 
+
 end

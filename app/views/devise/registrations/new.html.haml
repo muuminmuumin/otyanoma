@@ -1,0 +1,38 @@
+.AccountPage
+  .AccountPage__Header
+    = link_to root_path do
+      = image_tag 'back/dog.jpg', alt: '犬', height: '100px', width: '300px', class: 'DogImage'
+      %h1 会員登録
+  .AccountPage__Form
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .FormField
+        .FormField__label--normal
+          = f.label :name
+          %span 必須
+        .FormField__input--normal
+          = f.text_field :name, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :email
+          %span 必須
+        .FormField__input--normal
+          = f.email_field :email
+      .FormField
+        .FormField__label--normal
+          = f.label :password
+          %i (英数字8文字以上)
+          %span 必須
+        .FormField__input--normal
+          = f.password_field :password, autocomplete: "off"
+      .FormField
+        .FormField__label--normal
+          = f.label :password_confirmation
+          %span 必須
+        .FormField__input--normal
+          = f.password_field :password_confirmation, autocomplete: "off"
+      .actions
+        = f.submit "会員登録", class: 'Button UserButton'
+  .AccountPage__toLoginOrSignIn
+    %p アカウントをお持ちの方はこちら
+    = render "devise/shared/links"  
