@@ -7,13 +7,13 @@
       = devise_error_messages!
       .FormField
         .FormField__label--normal  
-          = f.label :email
+          = f.label :email, "メールアドレス"
           %span 必須
         .FormField__input--normal
-          = f.text_field :name, autofocus: true
+          = f.email_field :email
       .FormField
         .FormField__label--normal
-          = f.label :password
+          = f.label :password, "パスワード"
           %i (英数字8文字以上)
           %span 必須
         .FormField__input--normal
