@@ -1,13 +1,15 @@
 class ContentsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  # before_action :move_to_index, except: [:index, :show]
 
   def index
+    @contents = Content.includes(:user).order("created_at DESC")
   end
 
   def show
   end
 
   def new
+    @content = Content.new
   end
   
 
