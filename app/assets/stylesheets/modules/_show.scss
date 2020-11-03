@@ -82,14 +82,12 @@
     &__UserBox{
       padding-bottom: 10px;
       &__UserName{
+        margin-bottom: 10px;
         color: black;
         font-weight: bold;
         &:hover{
           text-decoration: underline;
         }
-        i {
-          height: 30px;
-        }  
       }
     }
     .CommentTextBox{

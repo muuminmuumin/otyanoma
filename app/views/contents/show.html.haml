@@ -16,6 +16,7 @@
       .ContentsMessageBox
         .UserBox
           .UserBox__Name
+            = icon("fa", "user fa-2x")
             = link_to "#" , class: "Name" do
               スモモ
         .TextBoxShow
@@ -53,8 +54,8 @@
     .CommentBox
       .CommentBox__UserBox
         .CommentBox__UserBox__UserName
+          = icon("fa", "user fa-2x")
           = link_to "#" , class: "Name" do
-            = icon("fa", "user")
             = current_user.name
       .CommentTextBox
         %p.CommentTextBox__Body
