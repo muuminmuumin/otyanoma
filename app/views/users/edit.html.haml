@@ -7,7 +7,7 @@
       .FormField
         .FormField__label--normal
           = f.label :email, "メールアドレス"
-            %span 必須 
+          %span 必須 
         .FormField__input--normal
           = f.email_field :email, plaseholder: :email
       .FormField
@@ -26,5 +26,5 @@
       .actions
         = f.submit "変更する", class: 'Button UserButton'
   .AccountPage__toLoginOrSignIn
-    %p ログアウトする方はこちら  
-    = link_to "ログアウト", '#'
+    %p ログアウトする方はこちら
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button'

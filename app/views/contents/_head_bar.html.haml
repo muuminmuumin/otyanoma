@@ -4,10 +4,14 @@
       = link_to root_path do
         otyanoma
     .LeftHeader__Right
-      = link_to new_user_registration_path , class: "LeftHeader__Right__Btn" do
-        新規登録
-      = link_to new_user_session_path , class: "LeftHeader__Right__Btn" do
-        ログイン
+      - if user_signed_in?
+        = link_to edit_user_path(current_user), class: "CurrentUserName" do
+          = current_user.name
+      - else
+        = link_to new_user_registration_path , class: "LeftHeader__Right__Btn" do
+          新規登録
+        = link_to new_user_session_path , class: "LeftHeader__Right__Btn" do
+          ログイン
       
   .RightHeader
     .RightHeader__SearchBox
