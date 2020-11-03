@@ -54,7 +54,8 @@
       .CommentBox__UserBox
         .CommentBox__UserBox__UserName
           = link_to "#" , class: "Name" do
-            モモ
+            = icon("fa", "user")
+            = current_user.name
       .CommentTextBox
         %p.CommentTextBox__Body
           すごく辛いですね、、わかります

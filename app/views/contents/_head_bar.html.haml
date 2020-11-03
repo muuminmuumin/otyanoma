@@ -6,6 +6,7 @@
     .LeftHeader__Right
       - if user_signed_in?
         = link_to edit_user_path(current_user), class: "CurrentUserName" do
+          = icon("fa", "user")
           = current_user.name
       - else
         = link_to new_user_registration_path , class: "LeftHeader__Right__Btn" do
