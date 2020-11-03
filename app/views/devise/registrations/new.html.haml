@@ -8,9 +8,10 @@
       .FormField
         .FormField__label--normal
           = f.label :name, "ニックネーム"
+          %i (10文字以内)
           %span 必須
         .FormField__input--normal
-          = f.text_field :name, autofocus: true
+          = f.text_field :name, autofocus: true, maxlength: "10"
       .FormField
         .FormField__label--normal
           = f.label :email, "メールアドレス"
