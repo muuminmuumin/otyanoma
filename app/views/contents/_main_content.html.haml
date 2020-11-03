@@ -2,7 +2,10 @@
   .FirstView
     = image_tag 'back/kazoku.jpg', alt: '犬の家族', height: '300px', width: '500px'
   .FirstViewBtn
-    = link_to("今すぐ介護の相談をする", new_content_path, class: "FirstViewText")
+    - if user_signed_in?
+      = link_to("今すぐ介護の相談をする", new_content_path, class: "FirstViewText")
+    - else
+      = link_to("今すぐ会員登録して相談をする", new_user_registration_path, class: "FirstViewText")
 
 
 .Sideber

@@ -1,0 +1,87 @@
+.AccountPage{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: auto;
+  &__Header{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-bottom: solid #ddd 1px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      padding-bottom: 20px;
+     
+    }
+  }
+  &__Form{
+    text-align: center;
+    padding: 30px;   
+    background-color: #f8f8f8f8;
+  }
+
+  &__toLoginOrSignIn{
+    border-top: solid #ddd 1px;
+    padding-top: 20px;
+    text-align: center;
+    p {
+      margin: 15px 0;
+    }
+    a {
+      height: 40px;
+      line-height: 40px;
+      color: white;
+      text-align: center;
+      background-color: #ddd;
+      font-size: 15px; 
+      border-radius: 2px;     
+    }
+  }
+}
+
+.FormField{
+  margin: 20px;
+  &__label--normal{
+    margin: 15px;
+    font-size: 14px;
+    font-weight: 200;
+    i {
+      font-size: 11px;
+    }
+    span {
+      color: red;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  }
+  &__input--normal {
+    input {
+      box-sizing: border-box;
+      width: 300px;
+      padding: 5px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.Button {
+  display: inline-block;
+  height: 50px;
+  padding: 0 30px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.UserButton {
+  margin-top: 20px;
+  color: white;
+  background-color: gray;
+}
