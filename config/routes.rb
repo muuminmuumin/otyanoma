@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:edit, :update]
 
-  resources :contents, only: [:index, :show, :new, :create]
+  resources :contents
   
   root "contents#index"
   

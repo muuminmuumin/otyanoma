@@ -5,7 +5,10 @@
     .FirstView
       = image_tag 'back/kazoku.jpg', alt: '犬の家族', height: '300px', width: '500px'
     .FirstViewBtn
-      = link_to("今すぐ介護の相談をする", "#", class: "FirstViewText")
+      - if user_signed_in?
+        = link_to("今すぐ介護の相談をする", new_content_path, class: "FirstViewText")
+      - else
+        = link_to("今すぐ会員登録して相談をする", new_user_registration_path, class: "FirstViewText")
   
   .Middle
     .MiddleBar
@@ -18,28 +21,13 @@
           .UserBox__Name
             = icon("fa", "user fa-2x")
             = link_to "#" , class: "Name" do
-              スモモ
+              = @content.user.name
         .TextBoxShow
           %p.BodyContent
-            私の父は兄と二人暮らしで兄は日中は仕事で夕方まで居なく
-            日中は独居になります。
-            私は遠くの他県に住んでおり
-            コロナのこともあり介護にかえることもできません。
-            父の認知症は進み
-            最近では、台所で失禁をしてしまったそうです。
-            本人に兄が聞くの覚えがない
-            そんなことをした記憶がないと怒ってしまいます。
-            そして、兄も父に強く怒ってしまうようです。
-            また、日中はひとりのため、タクシーで買い物は行き、浪費してしまうそうです。
-            多少のお金を持たせないと怒ってしまうそうで
-            困っているそうです。
-            お金の浪費や失禁
-            どうしたらいいか
-            悩んでいるそうです。 わたしは、遠くの他県に住んでいるため
-            コロナの事もあり帰る事も出来ず、気を揉んでおります。何か解決策はあるでしようか？
+            = @content.text
         .DateBox
           %p.NowDate
-            2020.10.23 10:23
+            = @content.created_at.strftime("%Y.%m.%d %H:%M") 
   
   .CommentConteiner
     .Middle
@@ -56,7 +44,7 @@
         .CommentBox__UserBox__UserName
           = icon("fa", "user fa-2x")
           = link_to "#" , class: "Name" do
-            = current_user.name
+            梨
       .CommentTextBox
         %p.CommentTextBox__Body
           すごく辛いですね、、わかります
