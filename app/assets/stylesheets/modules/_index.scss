@@ -9,13 +9,14 @@
   padding: 10px 0 ;
   display: flex;
   justify-content: space-between;
-  border: 2px solid pink;
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
   .LeftHeader{
     width: 30%;
     display: flex;
     padding-top: 30px;
     &__Left{
       padding: 0 30px 0 20px;
+      font-weight: bold;
     }
     &__Right{
     
@@ -23,10 +24,10 @@
         color: white;
         background-color: rgb(248, 157, 172);
         border-radius: 4px;
-        padding: 5px;
+        padding: 10px;
         margin-left: 10px;
         font-size: 15px;
-        font-weight: bold;
+        
       }
     }
   }
@@ -166,7 +167,7 @@
 }
 
 .CurrentUserName{
-  font-weight: bold;
+  
   &:hover{
     opacity: 0.4;
   }  
