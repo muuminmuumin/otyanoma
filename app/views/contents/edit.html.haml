@@ -1,0 +1,18 @@
+.ContentSendPage
+  = render "head_bar"
+  .ContentSend
+    .Middle
+      .MiddleBar
+        .MiddleBar__Center
+          __ 編集する
+    .ContentSendForm
+      .ContentSendName
+        = current_user.name
+      .ContentSendBox
+        = form_with model: @content, class: 'ContentCreateForm', local: true do |f|
+          .ContentSendInputText
+            = f.text_area :text, class: 'ContentSendInputText__InputText', placeholder: '介護に関してのご質問・ご相談はこちらからご入力ください', rows: '20'
+          .ContentSendBtn
+            = f.submit '更新する', class: 'ContentSendBtn__SubmitBtn'
+
+  = render "footer"

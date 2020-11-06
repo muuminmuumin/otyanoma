@@ -10,7 +10,18 @@ class ContentsController < ApplicationController
   end
 
   def edit
-  
+  end
+
+  def update
+    content = Content.find(params[:id])
+    if content.update(content_params)
+      redirect_to contents_path(params[:id]), notice: "テキストを変更しました"
+    else
+      contents = Content.includes(:user)
+      flash.now[:alert] = "変更できませんでした。もう一度お試しください"
+      render "edit"
+    end
+
   end
 
   def new
