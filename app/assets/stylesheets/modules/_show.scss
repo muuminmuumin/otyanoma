@@ -19,15 +19,17 @@
     .UserBox{
       padding-bottom: 15px;
       .Name{
+        margin-right: 10px;
         &:hover{
           text-decoration: underline;
-        }  
+        }
       }
     }
     .TextBoxShow{
       line-height: 1.72;
       font-size: 15px;
       width: 100%;
+    
     }
     .DateBox{
       padding-top: 10px;
@@ -123,4 +125,11 @@
   }
 }
 
+.EditBtn{
+  font-size: 14px;
+  background-color: gray;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+}  
 
