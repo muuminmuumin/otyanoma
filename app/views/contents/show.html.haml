@@ -21,17 +21,15 @@
           .UserBox__Name
             = icon("fa", "user fa-2x")
             = link_to "#" , class: "Name" do
-              = @content.user.name
-          - if user_signed_in?  
-            - if @content.user_id == current_user.id
+              = @content.user.name 
+            - if user_signed_in? && @content.user_id == current_user.id
               = link_to edit_content_path(@content.id), class: "EditBtn" do
-                編集
-            
-              
+                = icon("fa", "edit")
+              = link_to content_path(@content.id), method: :delete, class: "DeleteBtn", data: { confirm: "本当に削除してもよろしいですか？" }  do
+                = icon("fa", "trash-alt")
         .TextBoxShow
           %p.BodyContent
             = @content.text
-
         .DateBox
           %p.NowDate
             = @content.created_at.strftime("%Y.%m.%d %H:%M") 
