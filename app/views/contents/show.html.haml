@@ -40,35 +40,40 @@
         .MiddleBar__Center
           __ 回答一覧
     .CommentForm
-      = form_with class: 'CommnetSend' do |f|
-        = f.text_area :text, class: 'CommnetSend__Form', placeholder: 'コメントを入力する', rows: '3'
-        = f.submit 'SEND', class: 'CommnetSend__SubmitBtn'
+      - if user_signed_in?
+        = form_with(model: [@content, @comment], class: 'CommnetSend', local: true) do |f|
+          = f.text_area :text, class: 'CommnetSend__Form', placeholder: 'コメントを入力する', rows: '3'
+          = f.submit 'SEND', class: 'CommnetSend__SubmitBtn'
+      - else
+        .LoginMessage
+          = link_to("※※今すぐ登録してコメントする※※", new_user_registration_path, class: "LoginMessage__Link")
          
     .CommentBox
-      .CommentBox__UserBox
-        .CommentBox__UserBox__UserName
-          = icon("fa", "user fa-2x")
-          = link_to "#" , class: "Name" do
-            梨
-      .CommentTextBox
-        %p.CommentTextBox__Body
-          すごく辛いですね、、わかります
-          ただ頑張りましょう。向こうは何一つ覚えてないのだから
-      .DateRight
-        %p.NowDateComment
-          2020.10.30 11:00
+      - @comments.each do |comment|
+        - if comment.user_id == @content.user_id
+          .CommentBox__TopUserBox
+            .CommentBox__TopUserBox__TopUserName
+              = icon("fa", "user fa-2x")
+              = link_to "#" , class: "TopName" do
+                = comment.user.name
+          .TopCommentTextBox
+            %p.TopCommentTextBox__TopBody
+              = comment.text
+          .TopDateRight
+            %p.NowDateComment
+              = comment.created_at.strftime("%Y.%m.%d %H:%M")
+
+        - else
+          .CommentBox__UserBox
+            .CommentBox__UserBox__UserName
+              = icon("fa", "user fa-2x")
+              = link_to "#" , class: "Name" do
+                = comment.user.name
+          .CommentTextBox
+            %p.CommentTextBox__Body
+              = comment.text
+          .DateRight
+            %p.NowDateComment
+              = comment.created_at.strftime("%Y.%m.%d %H:%M") 
     
-    .CommentBox
-      .CommentBox__UserBox
-        .CommentBox__UserBox__UserName
-          = link_to "#" , class: "Name" do
-            スイカさん
-      .CommentTextBox
-        %p.CommentTextBox__Body
-          心中お察しいたします
-      .DateRight
-        %p.NowDateComment
-          2020.10.30 11:00
-                
-  
   = render "footer"
