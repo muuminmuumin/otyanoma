@@ -29,7 +29,7 @@
                 = icon("fa", "trash-alt")
         .TextBoxShow
           %p.BodyContent
-            = @content.text
+            = simple_format(@content.text)
         .DateBox
           %p.NowDate
             = @content.created_at.strftime("%Y.%m.%d %H:%M") 
@@ -58,7 +58,7 @@
                 = comment.user.name
           .TopCommentTextBox
             %p.TopCommentTextBox__TopBody
-              = comment.text
+              = simple_format(comment.text)
           .TopDateRight
             %p.NowDateComment
               = comment.created_at.strftime("%Y.%m.%d %H:%M")
