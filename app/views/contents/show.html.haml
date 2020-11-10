@@ -41,8 +41,8 @@
           __ 回答一覧
     .CommentForm
       = form_with class: 'CommnetSend' do |f|
-        = f.text_area '#', {class: 'CommnetSend__Form', placeholder: 'コメントを入力する', rows: '3'}
-        = f.submit 'SEND', {class: 'CommnetSend__SubmitBtn'}
+        = f.text_area :text, class: 'CommnetSend__Form', placeholder: 'コメントを入力する', rows: '3'
+        = f.submit 'SEND', class: 'CommnetSend__SubmitBtn'
          
     .CommentBox
       .CommentBox__UserBox
