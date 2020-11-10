@@ -71,7 +71,7 @@
                 = comment.user.name
           .CommentTextBox
             %p.CommentTextBox__Body
-              = comment.text
+              = simple_format(comment.text)
           .DateRight
             %p.NowDateComment
               = comment.created_at.strftime("%Y.%m.%d %H:%M") 
