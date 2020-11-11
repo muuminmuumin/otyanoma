@@ -53,6 +53,7 @@ class ContentsController < ApplicationController
 
   def search
     @contents = Content.search(params[:keyword])
+    @keyword = params[:keyword] #検索した文字列を代入
   end
 
   private
