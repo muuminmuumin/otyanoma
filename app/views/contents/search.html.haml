@@ -1,0 +1,25 @@
+.SearchContents
+  = render "head_bar"
+  .Middle
+    .MiddleBar
+      .MiddleBar__Center
+        - if @keyword != ""
+          #{@keyword} の検索結果一覧
+        - else
+          一覧を表示しています
+  
+    .Contents
+      - @contents.each do |content|
+        .ContentsBox
+          .UserBox
+            .UserBox__Name
+              = icon("fa", "user fa-2x")
+              = link_to "#", class: "Name" do
+                = content.user.name
+          .TextBox
+            %p.Body
+              = link_to content_path(content.id), class: "Body" do
+                = content.text
+          .DateBox
+            %p.NowDate
+              = content.created_at.strftime("%Y.%m.%d %H:%M")  

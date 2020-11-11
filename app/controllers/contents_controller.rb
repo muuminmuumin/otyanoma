@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @contents = Content.includes(:user).order("created_at DESC")
@@ -49,7 +50,11 @@ class ContentsController < ApplicationController
       render :show
     end
   end
-  
+
+  def search
+    @contents = Content.search(params[:keyword])
+    @keyword = params[:keyword] #検索した文字列を代入
+  end
 
   private
 
@@ -59,7 +64,12 @@ class ContentsController < ApplicationController
 
   def set_content
     @content = Content.find(params[:id])
-    
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
  
 
