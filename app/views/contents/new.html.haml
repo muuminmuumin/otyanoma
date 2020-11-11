@@ -7,7 +7,6 @@
           __ 相談、介護に関しての質問をする
     .ContentSendForm
       .ContentSendName
-        = current_user.name
       .ContentSendBox
         = form_with model: @content, class: 'ContentCreateForm', local: true do |f|
           .ContentSendInputText
