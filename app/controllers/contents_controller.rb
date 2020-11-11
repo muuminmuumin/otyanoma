@@ -6,7 +6,8 @@ class ContentsController < ApplicationController
   end
 
   def show
-    
+    @comment = Comment.new
+    @comments = @content.comments.includes(:user).order("created_at DESC")
   end
 
   def edit
@@ -36,6 +37,16 @@ class ContentsController < ApplicationController
       @contents = Content.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
       render :new
+    end
+  end
+
+  def destroy
+    content = Content.find(params[:id])
+    if content.destroy
+      redirect_to contents_path(params[:id]), notice: "削除しました"
+    else
+      flash.now[:alert] = "失敗しました。再度お試しください"
+      render :show
     end
   end
   

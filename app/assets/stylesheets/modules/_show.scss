@@ -19,7 +19,7 @@
     .UserBox{
       padding-bottom: 15px;
       .Name{
-        margin-right: 10px;
+        margin-right: 30px;
         &:hover{
           text-decoration: underline;
         }
@@ -84,6 +84,7 @@
     &__UserBox{
       padding-bottom: 10px;
       &__UserName{
+        margin-top: 10px;
         margin-bottom: 10px;
         color: black;
         font-weight: bold;
@@ -126,10 +127,82 @@
 }
 
 .EditBtn{
-  font-size: 14px;
-  background-color: gray;
-  color: #fff;
   padding: 5px;
-  border-radius: 4px;
-}  
+  margin-right: 10px;
+} 
 
+.DeleteBtn{
+  padding: 5px;
+}
+
+.LoginMessage{
+  width: 300px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  a {
+    &:hover{
+      text-decoration: underline;
+    }
+    font-weight: bold;
+   
+  }
+
+}
+
+.CommentBox{
+  padding: 10px;
+  margin: 5px 0;
+  display: block;
+  width: 600px;
+  height: 100%;
+  &__TopUserBox{
+    padding-bottom: 10px;
+    margin:0 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    &__TopUserName{
+      margin-bottom: 10px;
+      color: black;
+      font-weight: bold;
+      //padding-left: 480px;
+      margin-top: 10px;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .TopCommentTextBox{
+    position: relative;
+    line-height: 1.72;
+    background-color: rgb(172, 170, 170);
+    padding: 10px;
+    border-radius: 10px;
+    &:before{
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: -15px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid rgb(172, 170, 170);
+      border-left: 15px solid transparent; 
+    }
+    p {
+      color: white;
+    }
+  }
+
+  .TopDateRight{
+    padding-top: 5px;
+    padding-left: 5px;
+
+    p {
+      text-align: left;
+      color: gray;
+      font-size: 13px;
+    }
+  }
+}
