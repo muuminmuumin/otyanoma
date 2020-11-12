@@ -186,6 +186,15 @@
   }  
 }
 
+.Last{
+  font-size: 15px;
+  a {
+    &:hover{
+      opacity: 0.4;
+    } 
+
+  }
+}
 
 
 

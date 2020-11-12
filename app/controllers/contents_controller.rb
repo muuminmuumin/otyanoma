@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @contents = Content.includes(:user).order("created_at DESC")
+    @contents = Content.includes(:user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def show
