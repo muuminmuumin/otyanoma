@@ -4,6 +4,7 @@
   .TopMain
     .FirstView
       = image_tag 'back/kazoku.jpg', alt: '犬の家族', height: '300px', width: '500px'
+      %p 介護の疑問・不安を解決しませんか？
     .FirstViewBtn
       - if user_signed_in?
         = link_to("今すぐ介護の相談をする", new_content_path, class: "FirstViewText")

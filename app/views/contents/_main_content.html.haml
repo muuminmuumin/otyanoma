@@ -1,21 +1,17 @@
 .TopMain
   .FirstView
     = image_tag 'back/kazoku.jpg', alt: '犬の家族', height: '300px', width: '500px'
+    %p 介護の疑問・不安を解決しませんか？
   .FirstViewBtn
     - if user_signed_in?
       = link_to("今すぐ介護の相談をする", new_content_path, class: "FirstViewText")
     - else
       = link_to("今すぐ会員登録して相談をする", new_user_registration_path, class: "FirstViewText")
 
-
-.Sideber
-
-
 .Middle
   .MiddleBar
     .MiddleBar__Center
-      __ 相談、Q&A
-  
+      __ 相談、Q&A 
   .Contents
     - @contents.each do |content|
       .ContentsBox
@@ -30,7 +26,9 @@
               = content.text
         .DateBox
           %p.NowDate
-            = content.created_at.strftime("%Y.%m.%d %H:%M")    
+            = content.created_at.strftime("%Y.%m.%d %H:%M")  
+    .Last
+      = paginate @contents
 
 
     
