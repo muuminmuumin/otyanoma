@@ -1,27 +1,9 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# otyanoma
+ 介護をしている方々が、介護の悩み・相談を投稿することができるサイトです<br >
+ 投稿された悩み・相談にはコメントすることができます<br >
+ 見た目がシンプルで、誰が見てもわかりやすいサイトになるよう心がけました
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 # otyanoma DB設計
